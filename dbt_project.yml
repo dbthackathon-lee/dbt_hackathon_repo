@@ -1,0 +1,24 @@
+name: 'dbt_ADV_demo'
+version: '1.0.0'
+config-version: 2
+
+profile: 'dbt_ADV_demo'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets: ["target"]
+
+models:
+  dbt_ADV_demo:
+    rawvault:
+      +materialized: table
+    business_vault:
+      +materialized: table
+    presentation_layer:
+      +materialized: view
